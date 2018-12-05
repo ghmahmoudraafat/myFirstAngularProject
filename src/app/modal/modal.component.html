@@ -1,0 +1,76 @@
+
+<div
+  class="modal fade bd-example-modal-lg"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="myLargeModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">
+          {{ clickedProduct.productName }}
+        </h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-12">
+            <img
+              [src]="clickedProduct.imageUrl"
+              [alt]="clickedProduct.productName"
+              style="max-width: 100%"
+            />
+          </div>
+          <div class="col-md-12">
+            <br />
+            <h4>Description</h4>
+            {{ clickedProduct.description }}
+            <hr />
+
+            <h4>Rating :  {{ clickedProduct.starRating }}</h4>
+            <app-rating [CurrentRatingValue]='clickedProduct.starRating'
+            (newRatingValue)='onRatingChange($event)'
+            ></app-rating>
+
+
+
+           <div class="clearfix"></div>
+
+            <hr />
+            <h4>Comments</h4>
+            <ul class="list-group list-group-flush text-left">
+              <li class="list-group-item" *ngFor="let comment of clickedProduct.comments">
+                {{ comment }}
+              </li>
+            </ul>
+
+            <textarea
+              name=""
+              id=""
+              cols="30"
+              rows="2"
+              class="form-control"
+              placeholder="Add Comments .."
+              [(ngModel)]="newComment"
+            ></textarea>
+            <hr />
+            <button class="btn btn-primary float-right" (click)="addComment()">
+              Add Comments
+            </button>
+          </div>
+        </div>
+        <br />
+        <div class="row"><div class="col-md-12"></div></div>
+      </div>
+    </div>
+  </div>
+</div>

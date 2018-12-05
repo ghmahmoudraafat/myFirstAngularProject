@@ -1,0 +1,10 @@
+tr {
+  transition: all 0.4s;
+}
+tbody tr:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  background: #f7f7f7;
+
+}
+

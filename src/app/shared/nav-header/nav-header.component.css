@@ -1,0 +1,30 @@
+.lighter-text {
+  color: #abb0be;
+}
+
+.main-color-text {
+  color: #6394f8;
+}
+
+nav {
+
+  position: relative;
+}
+nav .navbar-left {
+  float: left;
+}
+nav .navbar-right {
+  float: right;
+}
+nav ul li {
+
+}
+nav ul li a {
+  color: #777777;
+  text-decoration: none;
+}
+nav ul li a:hover {
+  color: black;
+}
+
+
