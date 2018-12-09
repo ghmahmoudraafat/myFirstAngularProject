@@ -12,6 +12,7 @@ import { NavHeaderComponent } from "./shared/nav-header/nav-header.component";
 import { ShopingCartMiniComponent } from "./shopping-cart/shoping-cart-mini/shoping-cart-mini.component";
 
 import { ShopingCartFullDetailsComponent } from "./shopping-cart/shoping-cart-full-details/shoping-cart-full-details.component";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { ShopingCartFullDetailsComponent } from "./shopping-cart/shoping-cart-fu
     ShopingCartMiniComponent,
     ShopingCartFullDetailsComponent
   ],
-  imports: [BrowserModule, FormsModule],
+  imports: [BrowserModule, FormsModule,HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })

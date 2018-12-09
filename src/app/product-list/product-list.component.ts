@@ -37,11 +37,20 @@ export class ProductListComponent implements OnInit {
     private productService: ProductsDataService,
     private miniCart: ProductsInCartService
   ) {
-    this.products = this.productService.getData();
-    this.listFilter = "";
+
+
     //
   }
-  ngOnInit() {}
+  ngOnInit() {
+    //
+    this.productService.getData().subscribe(
+      p => {
+         this.products = p ;
+         this.filterdProducts = this.products;}
+    );
+
+
+  }
 
   performFilter(filterBy: string): IProduct[] {
     return this.products.filter(
@@ -57,8 +66,7 @@ export class ProductListComponent implements OnInit {
     event.stopPropagation();
 
     this.miniCart.items.push(selected);
-    this.miniCart.setItemsPrice(selected.price) ;
-
+    this.miniCart.setItemsPrice(selected.price);
 
     //this.miniCartProduct = selected;
   }
