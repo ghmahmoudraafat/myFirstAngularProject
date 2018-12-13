@@ -10,9 +10,12 @@ import { Observable} from "rxjs";
 export class ProductsDataService {
   dataURl = "/src/api/products.json";
 
-  constructor(private httpRequest: HttpClient) {}
+  constructor(private httpRequest: HttpClient) {
+
+  }
 
   getData(): Observable<IProduct[]> {
     return this.httpRequest.get<IProduct[]>(this.dataURl);
   }
+
 }
