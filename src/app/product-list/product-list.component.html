@@ -32,11 +32,11 @@
         </thead>
         <tbody>
           <!--
-            (click)="showModal(product)"
-            data-toggle="modal"
-            data-target=".bd-example-modal-lg"
-          -->
-          <tr [routerLink]="['/products',product.productId]" *ngFor="let product of filterdProducts">
+
+       [routerLink]="['/products',product.productId]"   -->
+          <tr  (click)="showModal(product)"
+          data-toggle="modal"
+          data-target=".bd-example-modal-lg" *ngFor="let product of filterdProducts">
             <td><img width="50px" [src]="product.imageUrl" /></td>
             <td>{{ product.productName | uppercase }}</td>
 
